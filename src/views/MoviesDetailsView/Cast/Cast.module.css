@@ -1,5 +1,6 @@
 .list {
   display: flex;
+  font-family: 'Dosis', sans-serif;
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;

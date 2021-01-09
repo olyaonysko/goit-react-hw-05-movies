@@ -48,11 +48,12 @@ function MoviesDetailsView() {
   }, [movieId]);
 
   const goBackHandler = () => {
-    if (!location.state) {
-      history.push('/');
-      return;
-    }
-    history.push({ ...location.state.from });
+    // if (!location.state) {
+    //   history.push('/');
+    //   return;
+    // }
+    // history.push({ ...location.state.from });
+    history.push(location?.state?.from ?? '/');
   };
 
   return (
@@ -67,7 +68,7 @@ function MoviesDetailsView() {
             color="primary"
             style={{ backgroundColor: '#f0f0f0' }}
           >
-            Go back
+            ⏪ Go back
           </Button>
           <MoviesDetails movie={movie} url={url} location={location} />
           <Suspense fallback={<Loader />}>
@@ -81,12 +82,7 @@ function MoviesDetailsView() {
         </div>
       )}
 
-      {status === Status.REJECTED && error && (
-        <>
-          <Error message={error} />
-          <p>Whoops, something went wrong 😣</p>
-        </>
-      )}
+      {status === Status.REJECTED && error && <Error message={error} />}
     </>
   );
 }

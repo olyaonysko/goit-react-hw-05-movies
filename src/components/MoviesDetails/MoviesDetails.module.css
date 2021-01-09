@@ -1,6 +1,6 @@
 .wrapper {
+  width: 320px;
   padding-top: 10px;
-  display: flex;
   margin-bottom: 16px;
   border-bottom: 1px solid #2a363b;
 }
@@ -20,6 +20,8 @@
 .activeLink {
   composes: link;
   color: black;
+  font-size: 22px;
+  text-decoration: underline;
 }
 
 .poster {
@@ -32,12 +34,14 @@
 }
 
 .title {
+  font-family: 'Cinzel', serif;
   font-weight: 700;
   font-size: 20px;
   margin-bottom: 20px;
 }
 
 .info {
+  font-family: 'Dosis', sans-serif;
   margin-bottom: 30px;
   font-size: 18px;
   color: black;
@@ -55,8 +59,9 @@
 }
 
 .genreList {
-  font-style: italic;
+  font-family: 'Bodoni Moda', serif;
   font-weight: 300;
+  font-size: 20px;
 }
 
 .description {
@@ -66,7 +71,20 @@
 
 .rating {
   display: inline-block;
+  margin-left: 8px;
   padding: 5px;
-  border: 5px solid orange;
-  border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    width: 767px;
+    display: flex;
+  }
+}
+
+@media (min-width: 940px) {
+  .wrapper {
+    width: 940px;
+    margin: 0 auto;
+  }
 }

@@ -19,15 +19,17 @@ const MoviesDetails = ({ movie, url, location }) => {
           className={s.poster}
         />
         <div className={s.description}>
-          <h2>
+          <h2 className={s.title}>
             {movie.title && movie.original_nam}
             {movie.title}
             {movie.release_date && (
               <span> ({movie.release_date.slice(0, 4)})</span>
             )}
           </h2>
-          <h3 className={s.title}>Rating</h3>
-          <p className={(s.info, s.rating)}>{movie.vote_average}</p>
+          <h3 className={s.title}>
+            Rating:
+            <span className={(s.info, s.rating)}>⭐{movie.vote_average}</span>
+          </h3>
           <h3 className={s.title}>Overview</h3>
           <p className={s.info}>{movie.overview}</p>
           <h2 className={s.title}>

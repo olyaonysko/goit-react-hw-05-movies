@@ -3,3 +3,21 @@
   margin: 0 auto;
   text-align: center;
 }
+
+@media (min-width: 767px) {
+  .Container {
+    width: 760px;
+  }
+}
+
+@media (min-width: 940px) {
+  .Container {
+    width: 940px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .Container {
+    width: 1024px;
+  }
+}

@@ -44,15 +44,10 @@ function HomeView() {
     <>
       <h2 className={s.title}>Trending today</h2>
       {status === Status.PENDING && <Loader />}
-      {status === Status.REJECTED && error && (
-        <>
-          <Error message={error} />
-          <p>Whoops, something went wrong 😣</p>
-        </>
-      )}
+      {status === Status.REJECTED && error && <Error message={error} />}
       {status === Status.RESOLVED && (
         <>
-          <MoviesList movies={movies} url={'movies'} />
+          <MoviesList movies={movies} url={'movies'} location={'/'} />
           {totalPages > 1 && (
             <div className={s.wrapper}>
               <Pagination

@@ -7,7 +7,7 @@ function Error({ message }) {
   return (
     <div role="alert" className={s.wrapper}>
       <p text={message} className={s.message}>
-        {message}
+        {/* {message} */}
       </p>
       <img
         src={NotFoundPic}
@@ -20,7 +20,7 @@ function Error({ message }) {
 }
 
 Error.propTypes = {
-  message: PropTypes.string.isRequired,
+  message: PropTypes.object,
 };
 
 export default Error;

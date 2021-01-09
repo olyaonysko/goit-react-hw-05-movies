@@ -1,4 +1,5 @@
 .link {
+  font-family: 'Bodoni Moda', serif;
   display: inline-block;
   text-decoration: none;
   padding: 12px;
@@ -12,4 +13,10 @@
   color: #df8714;
   border: 5px solid #df8714;
   border-radius: 5px;
+}
+
+@media (max-width: 760px) {
+  wrapper {
+    width: 400px;
+  }
 }

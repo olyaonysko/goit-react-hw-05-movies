@@ -33,6 +33,7 @@ function MoviesView() {
   }, [location.search, page]);
 
   useEffect(() => {
+    if (!query) return;
     const fetchMoviesBySearch = async () => {
       setStatus(Status.PENDING);
       try {
@@ -52,9 +53,13 @@ function MoviesView() {
     fetchMoviesBySearch();
   }, [query, page]);
 
-  const searchHandler = query => {
-    setQuery(query);
-    history.push({ ...location, search: `query=${query}&page=1` });
+  const searchHandler = newQuery => {
+    if (query === newQuery) return;
+    setQuery(newQuery);
+    setMovies(null);
+    setError(null);
+    setStatus(Status.IDLE);
+    history.push({ ...location, search: `query=${newQuery}&page=1` });
   };
 
   const pageHandler = (event, page) => {
@@ -67,7 +72,7 @@ function MoviesView() {
       {status === Status.PENDING && <Loader />}
       {status === Status.RESOLVED && (
         <>
-          <MoviesList movies={movies} url={url} />
+          <MoviesList movies={movies} url={url} location={location} />
           {totalPages > 1 && (
             <div className={s.wrapper}>
               <Pagination
