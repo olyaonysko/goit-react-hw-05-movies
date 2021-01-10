@@ -39,8 +39,9 @@ function MoviesDetailsView() {
         setMovie(result);
         setStatus(Status.RESOLVED);
       } catch (error) {
-        setError(error);
+        setError(error.message);
         setStatus(Status.REJECTED);
+        console.log(error.message);
       }
     };
 
@@ -48,11 +49,6 @@ function MoviesDetailsView() {
   }, [movieId]);
 
   const goBackHandler = () => {
-    // if (!location.state) {
-    //   history.push('/');
-    //   return;
-    // }
-    // history.push({ ...location.state.from });
     history.push(location?.state?.from ?? '/');
   };
 

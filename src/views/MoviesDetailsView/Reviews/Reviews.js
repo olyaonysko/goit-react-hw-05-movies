@@ -45,7 +45,7 @@ const Reviews = movieID => {
 
       {status === Status.RESOLVED && (
         <>
-          <ul className={s}>
+          <ul className={s.list}>
             {reviews.map(({ id, author, content }) => (
               <li key={id} className={s.item}>
                 <p className={s.authorName}>{author}</p>

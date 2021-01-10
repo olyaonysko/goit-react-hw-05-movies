@@ -8,4 +8,15 @@
   font-weight: bold;
   font-size: 26px;
   color: red;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    width: 767px;
+  }
+
+  img {
+    display: inline-block;
+  }
 }

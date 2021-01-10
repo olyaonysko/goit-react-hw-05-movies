@@ -18,8 +18,15 @@ const fetchMovies = async (query, page = 1) => {
 };
 
 const fetchMovieDetail = async movieID => {
-  const { data } = await axios.get(`/movie/${movieID}`);
-  return data;
+  try {
+    const response = await axios.get(`/movie/${movieID}`);
+    if (response.status === 200) {
+      console.log('result', response.status);
+      return response.data;
+    }
+  } catch (error) {
+    throw error;
+  }
 };
 
 const fetchMovieCredits = async movieId => {

@@ -2,6 +2,12 @@ a {
   font-family: 'Bodoni Moda', serif;
 }
 
+.list {
+  width: 320px;
+  padding: 0px;
+  margin: 0 auto;
+}
+
 .item {
   padding: 20px 0;
   font-weight: 300;
@@ -13,4 +19,22 @@ a {
 .authorName {
   font-family: 'Dosis', sans-serif;
   font-weight: bold;
+}
+
+@media (min-width: 767px) {
+  .list {
+    width: 760px;
+  }
+}
+
+@media (min-width: 940px) {
+  .list {
+    width: 940px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .list {
+    width: 1024px;
+  }
 }
